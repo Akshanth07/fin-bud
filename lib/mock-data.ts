@@ -1,0 +1,28 @@
+export const mockInsurancePolicies = [
+  {
+    id: "pol-1",
+    policy_name: "HDFC ERGO Health Optima",
+    policy_number: "HDFC-HEALTH-9942",
+    insurance_type: "Health",
+    provider_name: "HDFC ERGO",
+    coverage_amount: 1000000,
+    premium_amount: 18500,
+    premium_frequency: "Annual",
+    policy_start_date: "2023-01-15",
+    policy_end_date: "2025-01-14",
+    status: "Active",
+  },
+  {
+    id: "pol-2",
+    policy_name: "LIC Tech Term Plan",
+    policy_number: "LIC-TERM-3310",
+    insurance_type: "Life",
+    provider_name: "LIC India",
+    coverage_amount: 15000000,
+    premium_amount: 24000,
+    premium_frequency: "Annual",
+    policy_start_date: "2022-06-01",
+    policy_end_date: "2052-05-31",
+    status: "Active",
+  },
+];
