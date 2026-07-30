@@ -13,7 +13,7 @@ export function useMarketNews(params?: FetchMarketNewsParams) {
   const query = useQuery<MarketNewsArticle[]>({
     queryKey: ["market-news", params?.search || "", params?.category || "All", params?.time_filter || "All Time", params?.sort || "latest"],
     queryFn: () => getMarketNews(params),
-    staleTime: 1000 * 60 * 5, // 5 minutes cache
+    staleTime: 1000 * 60 * 15, // 15 minutes cache (aligned with AI summary)
     refetchOnWindowFocus: false,
     retry: 2,
   });

@@ -1,7 +1,15 @@
 import json
+import logging
 from typing import List, Union
-from pydantic import AnyHttpUrl, Field, field_validator
+from pydantic import AnyHttpUrl, Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+logger = logging.getLogger(__name__)
+
+_PLACEHOLDER_SECRETS = frozenset({
+    "", "financialos-dev-super-secret-key-32-bytes-minimum",
+    "financialos-jwt-secret-placeholder", "your-supabase-jwt-secret",
+})
 
 
 class Settings(BaseSettings):
@@ -49,6 +57,23 @@ class Settings(BaseSettings):
         elif isinstance(v, list):
             return v
         return ["http://localhost:3000"]
+
+    @model_validator(mode="after")
+    def _enforce_production_secrets(self) -> "Settings":
+        """Fail-fast: refuse to start in production without real secrets."""
+        if self.APP_ENV == "production":
+            if self.SUPABASE_JWT_SECRET in _PLACEHOLDER_SECRETS:
+                raise ValueError(
+                    "CRITICAL: SUPABASE_JWT_SECRET must be set to a real value in production. "
+                    "The application will not start without a valid JWT secret."
+                )
+            if self.SECRET_KEY in _PLACEHOLDER_SECRETS:
+                raise ValueError(
+                    "CRITICAL: SECRET_KEY must be set to a strong random value in production."
+                )
+            # Force-disable debug mode and API docs in production
+            self.DEBUG = False
+        return self
 
 
 settings = Settings()

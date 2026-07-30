@@ -53,8 +53,15 @@ def decode_supabase_token(token: str) -> TokenPayload:
             continue
 
     # 2. If signature verification fails or placeholder secret used,
-    # decode payload while strictly enforcing token expiration ('exp') check
+    # decode payload while strictly enforcing token expiration ('exp') check.
+    # In production, refuse to decode without signature verification.
     if payload is None:
+        if settings.APP_ENV == "production":
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Token signature verification failed. Ensure SUPABASE_JWT_SECRET is correctly configured.",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
         try:
             payload = jwt.decode(
                 token,

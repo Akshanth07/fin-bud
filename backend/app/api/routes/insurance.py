@@ -14,6 +14,9 @@ from app.utils.response import success_response
 
 router = APIRouter(prefix="/insurance", tags=["Insurance"])
 
+# Maximum upload file size: 10 MB
+MAX_UPLOAD_SIZE = 10 * 1024 * 1024
+
 
 @router.post("/upload", response_model=None, status_code=status.HTTP_200_OK)
 async def upload_policy_document(
@@ -36,7 +39,13 @@ async def upload_policy_document(
             detail="Unsupported file type. Please upload a PDF, PNG, JPG, or JPEG document."
         )
 
-    file_bytes = await file.read()
+    # Enforce file size limit with bounded read (prevents memory exhaustion)
+    file_bytes = await file.read(MAX_UPLOAD_SIZE + 1)
+    if len(file_bytes) > MAX_UPLOAD_SIZE:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"Uploaded file exceeds maximum allowed size of {MAX_UPLOAD_SIZE // (1024 * 1024)}MB."
+        )
     if len(file_bytes) == 0:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Uploaded file is empty")
 

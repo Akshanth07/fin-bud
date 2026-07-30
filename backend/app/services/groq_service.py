@@ -89,7 +89,7 @@ class GroqService:
                         logger.warning(f"Groq Model '{model_name}' not found (404). Trying secondary model.")
                         break
                     elif "429" in err_str or "RateLimitError" in err_type:
-                        backoff = 2 ** attempt
+                        backoff = min(2 ** attempt, 10)
                         logger.warning(f"Groq Rate Limit (429) on attempt {attempt}/{self.MAX_RETRIES}. Backing off {backoff}s...")
                         time.sleep(backoff)
                     elif "timeout" in err_str.lower() or "connection" in err_str.lower():
