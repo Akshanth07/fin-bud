@@ -1,0 +1,156 @@
+[
+  {
+    "scheme_code": "TN_PUDHUMAI_PENN",
+    "name": "Pudhumai Penn Scheme (Moovalur Ramamirtham Ammiyar Higher Education Assurance)",
+    "category": "Education & Scholarship",
+    "ministry": "Social Welfare and Women Empowerment Department",
+    "source": "Tamil Nadu Government",
+    "state": "Tamil Nadu",
+    "description": "Financial assistance of ₹1,000 per month for female students who studied in government schools from Class 6 to 12 to pursue higher education.",
+    "benefits": {
+      "benefit_type": "Monthly Education Stipend",
+      "amount": 1000,
+      "frequency": "Monthly",
+      "summary": "₹1,000 per month transferred directly to bank account till completion of degree/diploma."
+    },
+    "eligibility_rules": {
+      "income_max": 500000,
+      "income_min": 0,
+      "age_min": 17,
+      "age_max": 25,
+      "gender": ["Female"],
+      "occupation": ["Student"],
+      "state": ["Tamil Nadu"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Female students in Tamil Nadu • Studied Class 6-12 in TN Govt schools • Pursuing Degree/Diploma",
+    "official_url": "https://penkalvi.tn.gov.in",
+    "documents_required": [
+      "Aadhaar Card",
+      "Class 6-12 school TC / bonafide certificate",
+      "College Admission ID / Bonafide",
+      "Bank account details linked with Aadhaar"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "College Portal Registration",
+        "description": "Register through the college nodal officer on penkalvi.tn.gov.in portal."
+      },
+      {
+        "step": 2,
+        "title": "Verify School Records",
+        "description": "EMIS portal automatically verifies TN Govt school attendance."
+      },
+      {
+        "step": 3,
+        "title": "Direct Benefit Credit",
+        "description": "₹1,000 monthly allowance credited automatically every month."
+      }
+    ],
+    "deadline": "Academic Session Start (July-August)",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "TN_KALAIGNAR_MAGALIR_URIMAI",
+    "name": "Kalaignar Magalir Urimai Thogai Scheme",
+    "category": "Social Security",
+    "ministry": "Special Programme Implementation Department",
+    "source": "Tamil Nadu Government",
+    "state": "Tamil Nadu",
+    "description": "Rights entitlement grant of ₹1,000 monthly for eligible women heads of households in Tamil Nadu to improve livelihood and financial independence.",
+    "benefits": {
+      "benefit_type": "Monthly Rights Allowance",
+      "amount": 1000,
+      "frequency": "Monthly",
+      "summary": "₹1,000 per month credited directly to the woman head of household bank account."
+    },
+    "eligibility_rules": {
+      "income_max": 250000,
+      "income_min": 0,
+      "age_min": 21,
+      "age_max": 65,
+      "gender": ["Female"],
+      "occupation": ["Any"],
+      "state": ["Tamil Nadu"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Female head of family in Tamil Nadu • Age 21+ • Annual family income below ₹2.5 Lakhs",
+    "official_url": "https://kmut.tn.gov.in",
+    "documents_required": [
+      "Smart Family Card (Ration Card)",
+      "Aadhaar Card",
+      "Bank passbook of female head of family",
+      "Electricity Bill (EB consumer number)"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Application at Special Camp",
+        "description": "Obtain form at designated ration shop or special e-Sevai camp."
+      },
+      {
+        "step": 2,
+        "title": "Biometric & Ration Card Verification",
+        "description": "Field staff verify family card and electricity bill details."
+      },
+      {
+        "step": 3,
+        "title": "Monthly Credit",
+        "description": "₹1,000 credited on the 15th of every month."
+      }
+    ],
+    "deadline": "Ongoing at e-Sevai centers",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "MH_LADKI_BAHIN",
+    "name": "Mukhyamantri Majhi Ladki Bahin Yojana",
+    "category": "Social Welfare",
+    "ministry": "Women and Child Development Department",
+    "source": "Maharashtra Government",
+    "state": "Maharashtra",
+    "description": "Monthly financial aid of ₹1,500 for eligible women in Maharashtra aged 21 to 65 to promote self-reliance and nutrition.",
+    "benefits": {
+      "benefit_type": "Direct Monthly Financial Aid",
+      "amount": 1500,
+      "frequency": "Monthly",
+      "summary": "₹1,500 per month financial aid credited to bank account."
+    },
+    "eligibility_rules": {
+      "income_max": 250000,
+      "income_min": 0,
+      "age_min": 21,
+      "age_max": 65,
+      "gender": ["Female"],
+      "occupation": ["Any"],
+      "state": ["Maharashtra"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Women in Maharashtra • Age 21-65 • Annual family income under ₹2.5 Lakhs",
+    "official_url": "https://ladkibahin.maharashtra.gov.in",
+    "documents_required": [
+      "Aadhaar Card",
+      "Domicile Certificate of Maharashtra",
+      "Income Certificate / Yellow-Orange Ration Card",
+      "Bank Account details"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Nari Shakti Doot App Application",
+        "description": "Download Nari Shakti Doot app or visit nearest Setu Suvidha Kendra."
+      },
+      {
+        "step": 2,
+        "title": "Upload Domicile & Income",
+        "description": "Upload Maharashtra domicile and income proof."
+      }
+    ],
+    "deadline": "Ongoing",
+    "status": "ACTIVE"
+  }
+]

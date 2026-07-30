@@ -1,0 +1,368 @@
+[
+  {
+    "scheme_code": "GOV_PM_KISAN",
+    "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "category": "Agriculture",
+    "ministry": "Ministry of Agriculture & Farmers Welfare",
+    "source": "myScheme",
+    "state": "All",
+    "description": "An income support scheme for landholding farmer families across India to supplement financial needs for agricultural inputs and domestic expenses.",
+    "benefits": {
+      "benefit_type": "Direct Benefit Transfer",
+      "amount": 6000,
+      "frequency": "Annual (3 installments of ₹2,000)",
+      "tax_exempt": true,
+      "summary": "₹6,000 per year directly transferred to bank account in 3 equal installments of ₹2,000 every 4 months."
+    },
+    "eligibility_rules": {
+      "income_max": 1500000,
+      "income_min": 0,
+      "age_min": 18,
+      "age_max": 75,
+      "gender": ["Any"],
+      "occupation": ["Farmer"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Landholding farmer families • Age 18–75 • Income under ₹15 Lakhs",
+    "official_url": "https://pmkisan.gov.in",
+    "documents_required": [
+      "Aadhaar Card",
+      "Land ownership documents (Khasra/Khatauni)",
+      "Bank Account details with IFSC",
+      "Mobile number linked with Aadhaar"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Online Registration",
+        "description": "Visit the official PM-KISAN portal (pmkisan.gov.in) and click on 'Farmers Corner'."
+      },
+      {
+        "step": 2,
+        "title": "Fill Aadhaar & State Details",
+        "description": "Enter your Aadhaar number, state, and verify with OTP."
+      },
+      {
+        "step": 3,
+        "title": "Upload Land Records",
+        "description": "Upload scanned copies of land title documents and bank passbook."
+      },
+      {
+        "step": 4,
+        "title": "Verification & Approval",
+        "description": "State Nodal Officer verifies records and approves direct transfer."
+      }
+    ],
+    "deadline": "Rolling (Year-round registration)",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "GOV_PM_AWAS_URBAN",
+    "name": "PMAY-U (Pradhan Mantri Awas Yojana - Urban / Credit Linked Subsidy Scheme)",
+    "category": "Housing",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "source": "data.gov.in",
+    "state": "All",
+    "description": "Interest subsidy on home loans for purchasing or constructing first pucca house for EWS, LIG, and MIG families.",
+    "benefits": {
+      "benefit_type": "Home Loan Interest Subsidy",
+      "max_subsidy": 267000,
+      "subsidy_rate": "6.5% interest subsidy on loan up to ₹6 Lakhs",
+      "summary": "Up to ₹2.67 Lakh upfront interest subsidy credited directly to home loan account."
+    },
+    "eligibility_rules": {
+      "income_max": 1800000,
+      "income_min": 0,
+      "age_min": 21,
+      "age_max": 70,
+      "gender": ["Any"],
+      "occupation": ["Salaried", "Self-Employed", "Business Owner", "Any"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "First home buyers • Household income below ₹18 Lakhs • Age 21–70",
+    "official_url": "https://pmaymis.gov.in",
+    "documents_required": [
+      "Aadhaar Card of all family members",
+      "Income proof (ITR / Form 16 / Salary slips)",
+      "Property purchase agreement / construction plan",
+      "Self-declaration of not owning a pucca house in India"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Apply for Home Loan",
+        "description": "Approach any Primary Lending Institution (Bank/HFC) for home loan under PMAY."
+      },
+      {
+        "step": 2,
+        "title": "Submit Subsidy Claim",
+        "description": "Fill out PMAY-CLSS application form at lender branch."
+      },
+      {
+        "step": 3,
+        "title": "Central Nodal Agency Review",
+        "description": "NHB/HUDCO validates claim and releases subsidy to bank."
+      }
+    ],
+    "deadline": "December 31, 2026",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "GOV_APY",
+    "name": "Atal Pension Yojana (APY)",
+    "category": "Pension",
+    "ministry": "Ministry of Finance",
+    "source": "myScheme",
+    "state": "All",
+    "description": "Guaranteed monthly pension scheme for citizens in the unorganised sector, providing ₹1,000 to ₹5,000 monthly pension from age 60.",
+    "benefits": {
+      "benefit_type": "Guaranteed Monthly Pension",
+      "pension_amount": "₹1,000 to ₹5,000 per month",
+      "tax_benefit": "Tax deduction under Section 80CCD(1B)",
+      "summary": "Fixed monthly pension of ₹1,000, ₹2,000, ₹3,000, ₹4,000, or ₹5,000 per month after turning 60 years."
+    },
+    "eligibility_rules": {
+      "income_max": 800000,
+      "income_min": 0,
+      "age_min": 18,
+      "age_max": 40,
+      "gender": ["Any"],
+      "occupation": ["Salaried", "Self-Employed", "Farmer", "Student", "Any"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Indian Citizens • Age 18–40 • Non-taxpayers in unorganised sector",
+    "official_url": "https://www.npscra.nsdl.co.in/scheme-details.php",
+    "documents_required": [
+      "Aadhaar Card",
+      "Savings Bank account with auto-debit facility",
+      "Mobile number"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Visit Bank/Post Office",
+        "description": "Visit the bank branch or post office where you hold a savings account."
+      },
+      {
+        "step": 2,
+        "title": "Fill APY Form",
+        "description": "Select desired monthly pension amount (₹1k-5k) and nominate beneficiary."
+      },
+      {
+        "step": 3,
+        "title": "Enable Auto-Debit",
+        "description": "Set up monthly auto-debit contribution from bank account."
+      }
+    ],
+    "deadline": "Ongoing",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "GOV_AYUSHMAN_BHARAT",
+    "name": "Ayushman Bharat - PM-JAY (Pradhan Mantri Jan Arogya Yojana)",
+    "category": "Health Insurance",
+    "ministry": "Ministry of Health and Family Welfare",
+    "source": "data.gov.in",
+    "state": "All",
+    "description": "World's largest government-funded healthcare insurance scheme providing health cover of ₹5 Lakhs per family per year for secondary and tertiary care hospitalization.",
+    "benefits": {
+      "benefit_type": "Cashless Health Cover",
+      "coverage_amount": 500000,
+      "summary": "Cashless treatment up to ₹5 Lakh per family annually at empanelled public and private hospitals across India."
+    },
+    "eligibility_rules": {
+      "income_max": 500000,
+      "income_min": 0,
+      "age_min": 0,
+      "age_max": 100,
+      "gender": ["Any"],
+      "occupation": ["Any"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "EWS & SECC 2011 listed families • Income under ₹5 Lakhs • Cashless treatment",
+    "official_url": "https://pmjay.gov.in",
+    "documents_required": [
+      "Aadhaar Card / Ration Card",
+      "Ayushman Bharat Card or PM-JAY letter"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Check Eligibility",
+        "description": "Visit mera.pmjay.gov.in or call 14555 to check SECC eligibility."
+      },
+      {
+        "step": 2,
+        "title": "Visit Empanelled Hospital",
+        "description": "Present Aadhaar card to Ayushman Mitra at hospital helpdesk."
+      },
+      {
+        "step": 3,
+        "title": "Get Cashless Treatment",
+        "description": "Hospital conducts treatment cashlessly up to ₹5 Lakh."
+      }
+    ],
+    "deadline": "Ongoing",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "GOV_SUKANYA_SAMRIDDHI",
+    "name": "Sukanya Samriddhi Yojana (SSY)",
+    "category": "Education & Child Welfare",
+    "ministry": "Ministry of Women and Child Development",
+    "source": "myScheme",
+    "state": "All",
+    "description": "A government-backed small deposit scheme targeted at the parents of a girl child to build a dedicated fund for higher education or marriage.",
+    "benefits": {
+      "benefit_type": "High Interest Savings & Tax Free Return",
+      "interest_rate": "8.2% p.a. (compounded annually)",
+      "tax_benefit": "EEE status under Section 80C",
+      "summary": "High guaranteed interest rate of 8.2% p.a. with 100% tax-free maturity returns."
+    },
+    "eligibility_rules": {
+      "income_max": 5000000,
+      "income_min": 0,
+      "age_min": 18,
+      "age_max": 65,
+      "gender": ["Female", "Any"],
+      "occupation": ["Any"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Parents/guardians of girl child below 10 years • Max 2 accounts per family",
+    "official_url": "https://www.indiapost.gov.in/Financial/pages/content/sukanya-samriddhi-account.aspx",
+    "documents_required": [
+      "Girl child birth certificate",
+      "Parent/Guardian Aadhaar Card & PAN Card",
+      "Proof of address"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Visit Post Office or Bank",
+        "description": "Visit nearest India Post branch or authorized commercial bank."
+      },
+      {
+        "step": 2,
+        "title": "Submit SSY Form",
+        "description": "Attach child's birth certificate and guardian KYC documents."
+      },
+      {
+        "step": 3,
+        "title": "Make Initial Deposit",
+        "description": "Deposit minimum ₹250 to open account (max ₹1.5 Lakh per fiscal year)."
+      }
+    ],
+    "deadline": "Ongoing",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "GOV_PM_SURAKSHA_BIMA",
+    "name": "PMSBY (Pradhan Mantri Suraksha Bima Yojana)",
+    "category": "Insurance",
+    "ministry": "Ministry of Finance",
+    "source": "myScheme",
+    "state": "All",
+    "description": "An affordable accidental death and disability insurance scheme available at a nominal premium of ₹20 per annum.",
+    "benefits": {
+      "benefit_type": "Accidental Death & Disability Cover",
+      "coverage_amount": 200000,
+      "premium": "₹20 per year",
+      "summary": "₹2 Lakh cover for accidental death/permanent total disability at just ₹20/year."
+    },
+    "eligibility_rules": {
+      "income_max": 10000000,
+      "income_min": 0,
+      "age_min": 18,
+      "age_max": 70,
+      "gender": ["Any"],
+      "occupation": ["Any"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": false
+    },
+    "eligibility_summary": "Bank account holders • Age 18–70 • Nominal ₹20/year premium",
+    "official_url": "https://www.jansuraksha.gov.in",
+    "documents_required": [
+      "Aadhaar Card",
+      "Savings Bank account with auto-debit authorization"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Log in to Net Banking",
+        "description": "Log in to internet banking or mobile app of your bank."
+      },
+      {
+        "step": 2,
+        "title": "Select Social Security Schemes",
+        "description": "Click on PMSBY and enable auto-debit of ₹20/year."
+      }
+    ],
+    "deadline": "May 31 annually for renewal",
+    "status": "ACTIVE"
+  },
+  {
+    "scheme_code": "GOV_SCSS",
+    "name": "Senior Citizens Savings Scheme (SCSS)",
+    "category": "Investment & Pension",
+    "ministry": "Ministry of Finance",
+    "source": "myScheme",
+    "state": "All",
+    "description": "A government-backed risk-free savings scheme offering high quarterly interest payouts specifically designed for senior citizens.",
+    "benefits": {
+      "benefit_type": "Quarterly Income Investment",
+      "interest_rate": "8.2% p.a. (payable quarterly)",
+      "max_deposit": 3000000,
+      "tax_benefit": "Section 80C deduction up to ₹1.5 Lakh",
+      "summary": "8.2% annual interest paid quarterly with deposit limit up to ₹30 Lakhs."
+    },
+    "eligibility_rules": {
+      "income_max": 10000000,
+      "income_min": 0,
+      "age_min": 60,
+      "age_max": 100,
+      "gender": ["Any"],
+      "occupation": ["Any"],
+      "state": ["All"],
+      "disabled": false,
+      "senior_citizen": true
+    },
+    "eligibility_summary": "Senior Citizens age 60+ (or retired defense personnel 55+) • Max ₹30 Lakh deposit",
+    "official_url": "https://www.indiapost.gov.in",
+    "documents_required": [
+      "PAN Card",
+      "Aadhaar Card",
+      "Proof of Age / Retirement order",
+      "Passport size photos"
+    ],
+    "application_process": [
+      {
+        "step": 1,
+        "title": "Visit Bank or Post Office",
+        "description": "Obtain Form-A for SCSS account opening."
+      },
+      {
+        "step": 2,
+        "title": "Submit Age & KYC Proof",
+        "description": "Attach PAN, Aadhaar, and retirement certificate if applicable."
+      },
+      {
+        "step": 3,
+        "title": "Deposit Funds",
+        "description": "Deposit funds up to ₹30 Lakhs by cheque or DD."
+      }
+    ],
+    "deadline": "Ongoing",
+    "status": "ACTIVE"
+  }
+]
