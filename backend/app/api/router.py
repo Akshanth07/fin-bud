@@ -35,7 +35,7 @@ api_router.include_router(government_schemes_router, prefix="/government-schemes
 api_router.include_router(ai_insights_router)
 api_router.include_router(market_news_router)
 api_router.include_router(notifications_router)
-api_router.include_router(income_router)
+api_router.include_router(income_router, prefix="/income-sources")
 api_router.include_router(income_router, prefix="/income")
 api_router.include_router(expenses_router)
 api_router.include_router(assets_router)

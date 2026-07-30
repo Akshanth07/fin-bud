@@ -5,7 +5,8 @@ export interface LifeEventSimulationItem {
   event_type: string;
   input_data: Record<string, any>;
   ai_result?: Record<string, any>;
-  created_at?: string;
+  created_at: string;
+  [key: string]: any;
 }
 
 export async function getSimulations(): Promise<LifeEventSimulationItem[]> {

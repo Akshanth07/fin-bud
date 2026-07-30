@@ -230,7 +230,7 @@ export default function FinancialIntelligencePage() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Unable to fetch news.</h3>
             <p className="text-sm text-slate-300 mb-6 max-w-md">
-              Please try again later. We couldn't connect to the financial market data provider.
+              Please try again later. We couldn&apos;t connect to the financial market data provider.
             </p>
             <button
               onClick={() => refetch()}

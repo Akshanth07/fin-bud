@@ -4,44 +4,51 @@ export interface GovernmentSchemeData {
   id: string;
   scheme_code?: string;
   name: string;
+  title?: string;
   scheme_name?: string;
-  category: string;
+  category?: string;
   status?: string;
   version?: string;
   short_description?: string;
   description?: string;
   full_description?: string;
   eligibility_criteria?: Record<string, any>;
+  eligibility_rules?: any;
   eligibility_summary?: string;
   benefits?: any;
+  documents_required?: any;
+  application_process?: any;
   state?: string;
   ministry?: string;
   official_website_url?: string;
   official_url?: string;
   is_saved?: boolean;
+  [key: string]: any;
 }
 
 export interface RecommendedSchemeData extends GovernmentSchemeData {
   match_score?: number;
-  match_reasons?: string[];
-  reasons?: string[];
+  match_reasons: string[];
+  reasons: string[];
   is_eligible?: boolean;
   eligible?: boolean;
-  eligibility_percentage?: number;
-  priority_score?: number;
+  eligibility_percentage: number;
+  priority_score: number;
   source?: string;
   goal_matched?: any;
-  estimated_financial_benefit?: number;
+  estimated_financial_benefit: number;
   saved_status?: string;
+  [key: string]: any;
 }
 
 export interface SavedSchemeData {
   id: string;
   scheme_id: string;
-  scheme: GovernmentSchemeData;
+  scheme?: GovernmentSchemeData;
   status: string;
-  application_status?: string;
-  saved_at: string;
+  application_status: string;
+  saved_at?: string;
+  [key: string]: any;
 }
 
 export async function getSchemes(params?: any): Promise<GovernmentSchemeData[]> {

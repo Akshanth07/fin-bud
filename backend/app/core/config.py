@@ -43,7 +43,11 @@ class Settings(BaseSettings):
     FINNHUB_API_KEY: str = ""
 
     # CORS Origins
-    BACKEND_CORS_ORIGINS: Union[List[str], str] = ["http://localhost:3000", "http://127.0.0.1:3000"]
+    BACKEND_CORS_ORIGINS: Union[List[str], str] = [
+        "http://localhost:3000", "http://127.0.0.1:3000",
+        "http://localhost:3001", "http://127.0.0.1:3001",
+        "http://localhost:3002", "http://127.0.0.1:3002",
+    ]
 
     @field_validator("BACKEND_CORS_ORIGINS", mode="before")
     def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
@@ -53,10 +57,10 @@ class Settings(BaseSettings):
             try:
                 return json.loads(v)
             except Exception:
-                return ["http://localhost:3000"]
+                return ["http://localhost:3000", "http://localhost:3001"]
         elif isinstance(v, list):
             return v
-        return ["http://localhost:3000"]
+        return ["http://localhost:3000", "http://localhost:3001"]
 
     @model_validator(mode="after")
     def _enforce_production_secrets(self) -> "Settings":

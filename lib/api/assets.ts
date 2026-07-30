@@ -1,24 +1,28 @@
 import { apiClient } from "./client";
 
 export interface AssetItem {
-  id?: string;
+  id: string;
+  user_id?: string;
+  name?: string;
   asset_name: string;
   asset_type: string;
   category?: string;
-  current_value: number;
-  valuation?: number;
-  purchase_price?: number;
-  purchase_date?: string;
+  value?: number;
+  valuation: number;
+  current_value?: number;
+  institution?: string;
   notes?: string;
   created_at?: string;
+  [key: string]: any;
 }
 
 export async function getAssets(): Promise<AssetItem[]> {
   try {
     const res = await apiClient.get("/assets");
-    return res.data?.data || res.data || [];
-  } catch (e) {
-    console.warn("Failed to get assets:", e);
+    const data = res.data?.data || res.data;
+    return Array.isArray(data) ? data : [];
+  } catch (err) {
+    console.warn("Failed to fetch assets:", err);
     return [];
   }
 }
@@ -33,6 +37,7 @@ export async function updateAsset(id: string, data: Partial<AssetItem>): Promise
   return res.data?.data || res.data;
 }
 
-export async function deleteAsset(id: string): Promise<void> {
+export async function deleteAsset(id: string): Promise<boolean> {
   await apiClient.delete(`/assets/${id}`);
+  return true;
 }

@@ -7,16 +7,24 @@ def setup_cors(app: FastAPI) -> None:
     """Configures CORS middleware for the FastAPI application."""
     origins = [str(origin) for origin in settings.BACKEND_CORS_ORIGINS]
 
-    # Filter out wildcard '*' when allow_credentials=True (browsers reject this combo)
+    dev_origins = [
+        "http://localhost:3000", "http://127.0.0.1:3000",
+        "http://localhost:3001", "http://127.0.0.1:3001",
+        "http://localhost:3002", "http://127.0.0.1:3002",
+        "http://localhost:5173", "http://127.0.0.1:5173",
+    ]
+    for do in dev_origins:
+        if do not in origins:
+            origins.append(do)
+
     clean_origins = [o for o in origins if o != "*"]
-    if not clean_origins:
-        clean_origins = ["http://localhost:3000"]
 
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=clean_origins,
+        allow_origins=clean_origins if clean_origins else ["*"],
         allow_credentials=True,
-        allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allow_methods=["*"],
         allow_headers=["*"],
     )
+
 

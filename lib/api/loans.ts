@@ -1,20 +1,21 @@
 import { apiClient } from "./client";
 
 export interface LoanItem {
-  id?: string;
-  loan_name: string;
+  id: string;
+  loan_name?: string;
   loan_type: string;
   lender_name?: string;
-  lender?: string;
+  lender: string;
   principal_amount: number;
-  remaining_amount: number;
-  outstanding_amount?: number;
-  interest_rate: number;
+  remaining_amount?: number;
+  outstanding_amount: number;
+  interest_rate?: number;
   monthly_emi: number;
-  emi?: number;
+  emi: number;
   tenure_months?: number;
   start_date?: string;
   created_at?: string;
+  [key: string]: any;
 }
 
 export async function getLoans(): Promise<LoanItem[]> {

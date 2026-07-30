@@ -21,11 +21,13 @@ class UserService:
                 return user_by_email
 
         try:
-            return await user_repository.create(db, {
+            created_user = await user_repository.create(db, {
                 "id": user_id,
                 "email": email,
                 "full_name": full_name or ""
             })
+            await db.commit()
+            return created_user
         except Exception:
             await db.rollback()
             user = await user_repository.get_by_id(db, user_id)

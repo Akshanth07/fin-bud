@@ -1,15 +1,16 @@
 import { apiClient } from "./client";
 
 export interface ExpenseItem {
-  id?: string;
+  id: string;
   category: string;
-  title: string;
+  title?: string;
   amount: number;
   date?: string;
-  frequency?: string;
+  frequency: string;
   is_recurring?: boolean;
   notes?: string;
   created_at?: string;
+  [key: string]: any;
 }
 
 export async function getExpenses(): Promise<ExpenseItem[]> {

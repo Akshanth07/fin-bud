@@ -3,14 +3,15 @@ import { apiClient } from "./client";
 export interface GoalData {
   id: string;
   goal_name: string;
-  goal_type?: string;
+  goal_type: string;
   target_amount: number;
   current_amount: number;
-  target_date: string;
+  target_date?: string | null;
   category?: string;
-  priority?: string;
+  priority: string;
   monthly_contribution?: number;
   created_at?: string;
+  [key: string]: any;
 }
 
 export interface GoalCreatePayload {
@@ -18,10 +19,11 @@ export interface GoalCreatePayload {
   goal_type?: string;
   target_amount: number;
   current_amount?: number;
-  target_date: string;
+  target_date?: string | null;
   category?: string;
   priority?: string;
   monthly_contribution?: number;
+  [key: string]: any;
 }
 
 export interface GoalUpdatePayload {
@@ -29,18 +31,20 @@ export interface GoalUpdatePayload {
   goal_type?: string;
   target_amount?: number;
   current_amount?: number;
-  target_date?: string;
+  target_date?: string | null;
   category?: string;
   priority?: string;
   monthly_contribution?: number;
+  [key: string]: any;
 }
 
 export interface GoalPredictionData {
-  goal_id: string;
-  projected_completion_date: string;
-  on_track: boolean;
+  goal_id?: string;
+  projected_completion_date?: string | null;
+  on_track?: boolean;
   shortfall_amount?: number;
   recommended_monthly_saving?: number;
+  [key: string]: any;
 }
 
 export async function getGoals(): Promise<GoalData[]> {

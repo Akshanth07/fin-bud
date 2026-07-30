@@ -7,7 +7,7 @@ from app.schemas.income import IncomeSourceCreate, IncomeSourceResponse, IncomeS
 from app.services.income_service import income_service
 from app.utils.response import success_response
 
-router = APIRouter(prefix="/income-sources", tags=["Income Sources"])
+router = APIRouter(tags=["Income Sources"])
 
 
 @router.get("", response_model=None)

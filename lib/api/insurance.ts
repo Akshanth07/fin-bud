@@ -2,44 +2,67 @@ import { apiClient } from "./client";
 import { mockInsurancePolicies } from "@/lib/mock-data";
 
 export interface InsurancePolicyData {
-  id?: string;
+  id: string;
   policy_name: string;
-  policy_number: string;
-  insurance_type: string;
-  provider_name: string;
+  policy_number?: string;
+  insurance_type?: string;
+  provider_name?: string;
   coverage_amount: number;
   premium_amount: number;
   premium_frequency?: string;
-  policy_start_date?: string;
-  policy_end_date?: string;
+  policy_start_date?: string | null;
+  policy_end_date?: string | null;
   status?: string;
   created_at?: string;
-  // UI compatibility aliases
   company?: string;
   provider?: string;
   plan_name?: string;
   policy_type?: string;
   premium?: number;
   analysis?: any;
-  ai_explanation?: any;
+  ai_explanation?: {
+    strengths: string[];
+    weaknesses: string[];
+    risks: string[];
+    gaps: string[];
+    recommendations: string[];
+    summary?: string;
+    [key: string]: any;
+  };
   ocr_confidence?: number;
   policy_holder?: string;
   nominee?: string;
   claim_contact?: string;
-  start_date?: string;
-  end_date?: string;
-  renewal_date?: string;
-  maturity_date?: string;
+  start_date?: string | null;
+  end_date?: string | null;
+  renewal_date?: string | null;
+  maturity_date?: string | null;
+  [key: string]: any;
 }
 
 export interface OCRUploadResponseData {
-  extracted_data?: Partial<InsurancePolicyData>;
+  extracted_data: Partial<InsurancePolicyData>;
   extracted_info?: Partial<InsurancePolicyData>;
   analysis?: any;
-  ai_explanation?: any;
+  ai_explanation?: {
+    strengths: string[];
+    weaknesses: string[];
+    risks: string[];
+    gaps: string[];
+    recommendations: string[];
+    summary?: string;
+    [key: string]: any;
+  };
   validation_warnings?: string[];
   raw_text?: string;
   confidence?: number;
+  [key: string]: any;
+}
+
+export interface InsurancePortfolioAnalysis {
+  coverage_gap_warnings: string[];
+  recommendations: string[];
+  [key: string]: any;
 }
 
 export async function getInsurancePolicies(): Promise<InsurancePolicyData[]> {
@@ -54,7 +77,7 @@ export async function getInsurancePolicies(): Promise<InsurancePolicyData[]> {
   }
 }
 
-export async function getPolicies(): Promise<{ policies: InsurancePolicyData[]; portfolio_analysis?: any }> {
+export async function getPolicies(): Promise<{ policies: InsurancePolicyData[]; portfolio_analysis?: InsurancePortfolioAnalysis }> {
   try {
     const res = await apiClient.get("/insurance");
     const data = res.data?.data || res.data;

@@ -17,10 +17,15 @@ export interface UserProfileData {
   total_assets?: number;
   total_liabilities?: number;
   emergency_fund?: number;
+  emergency_fund_goal?: number;
   savings?: number;
   risk_tolerance?: string;
   marital_status?: string;
   dependents?: number;
+  avatar_url?: string;
+  date_of_birth?: string;
+  gender?: string;
+  [key: string]: any;
 }
 
 export async function getFinancialProfile(): Promise<UserProfileData | null> {
